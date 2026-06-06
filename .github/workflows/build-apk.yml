@@ -15,7 +15,12 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: frontend/package-lock.json
+          cache-dependency-path: |
+            package-lock.json
+            frontend/package-lock.json
+
+      - name: Install root dependencies (Capacitor)
+        run: npm ci || npm install
 
       - name: Install frontend dependencies
         working-directory: frontend
@@ -34,13 +39,11 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install Capacitor CLI
-        run: npm install -g @capacitor/core @capacitor/cli @capacitor/android
-
       - name: Init Capacitor Android
         run: |
           npx cap init StokFix com.stokglobal.stokfix --web-dir frontend/dist
           npx cap add android
+          npx cap sync android
 
       - name: Build APK
         working-directory: android

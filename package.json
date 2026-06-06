@@ -1,0 +1,16 @@
+{
+  "name": "stokfix",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build:frontend": "cd frontend && npm run build",
+    "cap:init": "npx cap init StokFix com.stokglobal.stokfix --web-dir frontend/dist",
+    "cap:add:android": "npx cap add android",
+    "cap:sync": "npx cap sync android"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.0.0",
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/android": "^7.0.0"
+  }
+}
