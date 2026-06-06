@@ -4,7 +4,7 @@
   "webDir": "frontend/dist",
   "bundledWebRuntime": false,
   "server": {
-    "url": "https://clause-with-logistics-rec.trycloudflare.com",
+    "url": "https://wto-summit-feel-distributor.trycloudflare.com",
     "cleartext": true
   },
   "android": {
