@@ -1,0 +1,12 @@
+{
+  "appId": "com.stokglobal.stokfix",
+  "appName": "StokFix",
+  "webDir": "frontend/dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}
