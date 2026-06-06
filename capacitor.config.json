@@ -4,6 +4,7 @@
   "webDir": "frontend/dist",
   "bundledWebRuntime": false,
   "server": {
+    "url": "https://clause-with-logistics-rec.trycloudflare.com",
     "cleartext": true
   },
   "android": {

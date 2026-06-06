@@ -1,12 +1,7 @@
 import axios from 'axios';
 
-const isCapacitor = window.location.protocol === 'file:';
-const API_BASE = isCapacitor
-  ? 'https://clause-with-logistics-rec.trycloudflare.com/api'
-  : '/api';
-
 const api = axios.create({
-  baseURL: API_BASE,
+  baseURL: '/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -26,11 +21,7 @@ api.interceptors.response.use(
     if (error.response?.status === 401) {
       localStorage.removeItem('stokfix_token');
       localStorage.removeItem('stokfix_user');
-      if (window.location.protocol === 'file:') {
-        window.location.hash = '#/';
-      } else {
-        window.location.href = '/';
-      }
+      window.location.href = '/';
     }
     return Promise.reject(error);
   }
